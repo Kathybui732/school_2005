@@ -14,7 +14,11 @@ class School
   end
 
   def end_time
-    "#{@start_time.to_i + @hours_in_school_day}:00"
+    if (@start_time.to_i + @hours_in_school_day) < 24
+      "#{@start_time.to_i + @hours_in_school_day}:00"
+    else (@start_time.to_i + @hours_in_school_day) < 24
+      "#{@start_time.to_i + @hours_in_school_day - 24}:00"
+    end
   end
 
   def is_full_time?
@@ -25,6 +29,14 @@ class School
   def standard_student_names
     @student_names.map do |name|
       name.capitalize
+    end
+  end
+
+  def can_convert_end_time
+    if (@start_time.to_i + @hours_in_school_day) < 12
+      "#{@start_time.to_i + @hours_in_school_day}:00"
+    else (@start_time.to_i + @hours_in_school_day) < 12
+      "#{@start_time.to_i + @hours_in_school_day - 12}:00"
     end
   end
 end
