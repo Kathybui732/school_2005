@@ -75,6 +75,6 @@ class SchoolTest < Minitest::Test
     # skip
     school = School.new('9:00', 7)
 
-    assert_equal "4:00",school.test_it_can_convert_end_time
+    assert_equal "4:00",school.can_convert_end_time
   end
 end
