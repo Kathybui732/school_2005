@@ -22,7 +22,7 @@ class School
   end
 
   def is_full_time?
-    return true if @hours_in_school_day >= 4
+    return true if @hours_in_school_day > 4
     false
   end
 
