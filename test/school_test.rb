@@ -54,12 +54,14 @@ class SchoolTest < Minitest::Test
   end
 
   def test_it_is_full_time
+    # skip
     school = School.new('9:00', 7)
 
     assert_equal true, school.is_full_time?
   end
 
   def test_it_can_standardized_student_names
+    # skip
     school = School.new('9:00', 7)
 
     school.add_student_name("Aurora")
@@ -67,5 +69,12 @@ class SchoolTest < Minitest::Test
     school.add_student_name("megan")
 
     assert_equal ["Aurora", "Tim", "Megan"], school.standard_student_names
+  end
+
+  def test_it_can_convert_end_time
+    # skip
+    school = School.new('9:00', 7)
+
+    assert_equal "4:00",school.test_it_can_convert_end_time
   end
 end
